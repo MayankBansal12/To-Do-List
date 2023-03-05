@@ -1,7 +1,7 @@
 const express=require("express");
 const router=express.Router();
 
-const homeController=require("../controllers/home_controller");
-router.get('/',homeController.home);
+const todoController=require("../controllers/todo");
+router.get('/',todoController.todo);
 
 module.exports=router;

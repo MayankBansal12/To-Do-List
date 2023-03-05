@@ -1,0 +1,141 @@
+body{
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container{
+    width: 75%;
+    /* height: 50%; */
+    background-color: rgba(0, 255, 0, 0.4);
+    border-radius: 10px;
+}
+.title{
+    color: white;
+    border-bottom: 1px solid darkgrey;
+    text-align: center;
+    margin: 10px 20px;
+}
+i{
+    font-size: 1.5rem;
+}
+section{
+    margin: 0 5%;
+}
+.description{
+    resize: none;
+    width: 100%;
+    margin: 2% 0 4%;
+    padding: 1% 2%;
+    font-size: 1.1rem;
+    outline: none;
+    border: 2px solid white;
+    background-color: rgba(255, 255, 255, 0.7);
+    box-sizing: border-box;
+}
+.other-details{
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    align-items: center;
+}
+hr{
+    background-color: grey;
+    margin: 0;
+}
+select{
+    outline: none;
+    width: 43.5%;
+    background-color: transparent;
+    height: 30px;
+    font-size: 1rem;
+    border: none;
+    color: white;
+}
+option{
+    color: black;
+}
+input{
+    margin: 0;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: white;
+    font-size: 1rem;
+}
+.vertical-line{
+    border-left: 2px solid rgba(255, 255, 255,0.5);
+    height: 50px;
+    margin: -5px 15px;
+}
+.headings{
+    color: white;
+    margin: 0;
+}
+.other-details h3{
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
+
+.buttons{
+    text-align: center;
+}
+.buttons i{
+    font-size: 1.2rem;
+}
+.btn{
+    font-size: 1.2rem;
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 6% 3% 3%; 
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    color: white;
+    cursor: pointer;
+    transition: .2s;
+}
+.buttons .btn{
+    width: 30%;
+}
+.btn:hover{
+    transform: scale(0.9);
+    opacity: 0.6;
+}
+#addbtn{
+    background-color: rgb(18, 169, 18);   
+}
+#deletebtn{
+    background-color: red;
+}
+
+/* Task lists */
+
+.task-list{
+    padding: 1% 0;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-size: 1rem;
+    /* height: 50px; */
+    align-items: center;
+    margin: 1% 0;
+}
+.deadline{
+    margin-left: 15px;
+    width: 100%;
+    color: gray;
+    font-size: 1rem;
+}
+.task-list .btn{
+    margin: 0;
+    background-color: purple;
+}
+.task-list .btn:hover{
+    transform: scale(1);
+    opacity: 0.8;
+}
