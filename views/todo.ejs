@@ -6,22 +6,22 @@
     <link rel="stylesheet" href="css/style.css">
     <body>
         <div class="container">
+            <div class="title">
+                <h1>
+                    <i class="fa-solid fa-pencil"></i>
+                    To Do List</h1>
+            </div>
             <!-- To get the tasks details -->
-            <form action="" method="post">
+            <form action="/create-task" method="post" id="create">
                 <!-- Title -->
-                <div class="title">
-                    <h1>
-                        <i class="fa-solid fa-pencil"></i>
-                        To Do List</h1>
-                </div>
 
                 <!-- Task Details -->
                 <section>
                     <h1 class="headings">Task:</h1>
-                    <textarea name="" id="description" cols="50" rows="1" class="description" placeholder="What do you want to do?" required></textarea>
+                    <textarea name="description" id="description" cols="50" rows="1" class="description" placeholder="What do you want to do?" required></textarea>
                     <hr>
                     <div class="other-details">
-                        <select name="" id="">
+                        <select name="category" id="">
                             <option selected>Choose a category</option>
                             <option value="Personal">Personal</option>
                             <option value="Work">Work</option>
@@ -31,31 +31,39 @@
                         </select>
                         <div class="vertical-line"></div>
                         <h3 class="headings">Deadline:</h3>
-                        <input type="date" name="" id="date">
+                        <input type="date" name="due_date" id="date">
                     </div>
                     <hr>
                 </section>
-
+            </form>
+                
                 <!-- Add and Delete Button -->
                 <section class="buttons">
-                    <button class="btn" id="addbtn"><i class="fa-solid fa-plus"></i> Add Task</button>
-                    <button class="btn" id="deletebtn"><i class="fa-solid fa-trash"></i> Delete</button>
+                    <button type="submit" form="create" class="btn" id="addbtn"><i class="fa-solid fa-plus"></i> Add Task</button>
+                    <a href="/delete-task">
+                        <button class="btn" id="deletebtn"><i class="fa-solid fa-trash"></i> Delete</button>
+                    </a>
                 </section>
-            </form>
 
             <!-- Task details stored in databases -->
             <form action="" method="get">
+                <%for(let task of task_list){%>
                 <section>
                     <hr>
                     <div class="task-list">
                         <div>
-                            <input type="checkbox" name="" id="task" class="checkbox">
-                            <label for="task" class="task-desc">No Description</label>
-                            <div class="deadline"><i class="fas fa-calendar fa-1x"></i> No Deadline</div>
+                            <input type="checkbox" name="" id="<%= task._id%>" class="checkbox">
+                            <label for="<%= task._id%>" class="task-desc">
+                                <%= task.description %>
+                            </label>
+                            <div class="deadline"><i class="fas fa-calendar fa-1x"></i> <%if(task.due_date.length==0){%>
+                                <%="No Deadline"%> <%}else{%> <%=task.due_date%> <%}%></div>
                         </div>
-                        <button disabled class="btn">Category</button>
+                        <%if(task.category!=="Choose a category"){%> 
+                        <button disabled class="btn"><%= task.category%> <%}%></button>
                     </div>
                 </section>
+                <%}%>
             </form>
         </div>
 
