@@ -13,6 +13,7 @@ module.exports.todo=function(req,res){
     });
 }
 
+// Controller for creating the task
 module.exports.createTask=function(req,res){
         taskList.create({
                 description: req.body.description,
@@ -27,6 +28,7 @@ module.exports.createTask=function(req,res){
         });
 };
 
+// Deleting the task
 module.exports.deleteTask=(req,res)=>{
     let id=req.query.id;
     taskList.findByIdAndDelete(id).then(()=>{
@@ -36,16 +38,3 @@ module.exports.deleteTask=(req,res)=>{
         return;
     });
 };
-
-    // let ids=new Array();
-    // for(let i in req.query)
-    // {
-    //     ids.push(i);
-    // }
-    // taskList.deleteMany({_id:{$in:ids}}).then(()=>{
-    //     res.redirect("back");
-    // }).catch((err)=>{
-    //     console.log("Error in deleting the task",err);
-    //     return;
-    // });
-// };

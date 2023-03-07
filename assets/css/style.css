@@ -8,6 +8,7 @@ body{
     /* height: 100vh; */
 }
 
+/* Main Container */
 .container{
     width: 50vw;
     background-color: rgba(0, 255, 0, 0.4);
@@ -25,6 +26,8 @@ i{
 section{
     margin: 0 5%;
 }
+
+/* Description for task */
 .description{
     resize: none;
     width: 100%;
@@ -46,6 +49,8 @@ hr{
     background-color: grey;
     margin: 0;
 }
+
+/* Category */
 select{
     outline: none;
     width: 15vw;
@@ -80,6 +85,7 @@ input{
     margin-right: 10px;
 }
 
+/* Buttons */
 .buttons{
     text-align: center;
 }
@@ -152,6 +158,7 @@ input{
     text-decoration: line-through;
 }
 
+/* Media Queries */
 @media screen and (max-width: 1200px){
     .container{
         width: 70vw;

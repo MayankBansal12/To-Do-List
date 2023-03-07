@@ -1,5 +1,6 @@
 const mongoose=require("mongoose");
 
+// Task Schema for To Do List
 let taskSchema=new mongoose.Schema({
     description:{
         type: String,
