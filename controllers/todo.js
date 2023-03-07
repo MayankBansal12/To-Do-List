@@ -28,12 +28,14 @@ module.exports.createTask=function(req,res){
 };
 
 module.exports.deleteTask=(req,res)=>{
-    taskList.deleteMany({}).then(()=>{
+    let id=req.query.id;
+    taskList.findByIdAndDelete(id).then(()=>{
         res.redirect("back");
     }).catch((err)=>{
         console.log("Error in deleting the task",err);
         return;
     });
+};
 
     // let ids=new Array();
     // for(let i in req.query)
@@ -46,4 +48,4 @@ module.exports.deleteTask=(req,res)=>{
     //     console.log("Error in deleting the task",err);
     //     return;
     // });
-};
+// };
